@@ -60,7 +60,7 @@ public:
     }
 
     // Visual utils
-    void display_map() const {
+    void display_map() const noexcept {
         uintptr_t last_offset = 0;
         std::cout << std::left;
         std::cout << "--- Arena Memory Map (compile with -DDEBUG) ---\n";
@@ -102,7 +102,7 @@ public:
         std::cout << "--------------------------------------------------\n\n";
     }
 
-    inline void memstat() noexcept {
+    inline void memstat() const noexcept {
         double used         = static_cast<double>(m_used);
         double capacity     = static_cast<double>(Capacity);
         double percent_used = (used / capacity) * 100.0;
